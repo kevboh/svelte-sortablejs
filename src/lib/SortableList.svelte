@@ -183,9 +183,9 @@
 	 * */
 	export let onChange: ((event: SortableEvent) => void) | undefined = undefined;
 
-	let options: Options;
+	export let options: Options = {};
 	onMount(() => {
-		options = {
+		options = Object.assign(options, {
 			group,
 			sort,
 			disabled,
@@ -227,7 +227,7 @@
 			onClone,
 			onMove,
 			onChange
-		};
+		});
 
 		if (draggable) {
 			options.draggable = draggable;
